@@ -1,0 +1,6 @@
+
+
+Также кому интересно,можете выводить сразу информацию с alert в вашу консоль  alert=browser.switch_to_alert() print (alert.text) и закрывать браузер с помощью browser.quit()
+
+
+
