@@ -14,7 +14,7 @@ try:
     driver = webdriver.Chrome()
     driver.get(link)
     radio1 = driver.find_element_by_id("peopleRule")
-    # radio1_checked = radio1.get_attribute("checked")
+    radio1_checked = radio1.get_attribute("checked")
     # print(radio1_checked)
     # radio1_enabled = radio1.get_attribute("enabled")
     # print(radio1_enabled)
