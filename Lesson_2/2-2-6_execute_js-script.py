@@ -1,3 +1,5 @@
+#!/home/alayna/sel/ve/bin/python3
+# -*- coding: utf-8 -*-
 
 import time
 from math import log, sin

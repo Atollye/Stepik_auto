@@ -1,5 +1,6 @@
+#!/home/alayna/sel/ve/bin/python3
+# -*- coding: utf-8 -*-
 
-# I am comment
 
 import time, math
 from selenium import webdriver
