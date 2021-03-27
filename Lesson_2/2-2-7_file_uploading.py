@@ -26,6 +26,5 @@ finally:
     time.sleep(10)
     browser.quit()
 
-28.903484553359252
 
 
