@@ -3,24 +3,31 @@
 
 import os, time
 from math import log, sin
-from selenium import webdriver
-from Stepik_auto.utils.utils import calc
 
-link = "http://suninjuly.github.io/redirect_accept.html"
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC 
+
+
+link = "http://suninjuly.github.io/explicit_wait2.html"
 
 try:
     browser = webdriver.Chrome()
     browser.get(link)
-    button = browser.find_element_by_tag_name('button').click()
-    browser.switch_to.window(browser.window_handles[1])
+    wait = WebDriverWait(browser, 12)
+    condition = EC.text_to_be_present_in_element((By.ID, "price"), "$100")
+    wait.until(condition)
+    button1 = browser.find_element_by_id("book")
+    button1.click()
     number_field = browser.find_element_by_id("input_value")
     number = int(number_field.text)
     res = (lambda x: log(abs(12*sin(x))))(number)
-    field1 = browser.find_element_by_css_selector("#answer")
-    field1.send_keys(str(res))
-    button = browser.find_element_by_css_selector('[type="submit"]')
-    button.click()
+    text_field = browser.find_element_by_id("answer")
+    text_field.send_keys(str(res))
+    button2 = browser.find_element_by_id("solve")
+    browser.execute_script("return arguments[0].scrollIntoView(true);", button2)
+    button2.click()
 finally:
-    time.sleep(5)
+    time.sleep(10)
     browser.quit()
-
